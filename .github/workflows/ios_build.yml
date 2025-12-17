@@ -19,7 +19,7 @@ jobs:
 
       - name: Build App for iOS
         run: |
-          xcodebuild -workspace ios/App/App.xcworkspace \
+          xcodebuild -project ios/App/App.xcodeproj \
                      -scheme App \
                      -sdk iphoneos \
                      -configuration Release \
