@@ -1,5 +1,5 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
+const SUPABASE_URL = 'https://kmbtiftykqscnrzerbaz.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImttYnRpZnR5a3FzY25yemVyYmF6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwMDMwMjQsImV4cCI6MjA4MTU3OTAyNH0.TbDEqGCy9wqbg24ZskT3z1r5GbVb2XPlAzEdLEKe_qQ';
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
