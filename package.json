@@ -1,0 +1,42 @@
+{
+   "name": "wukongchecklistapp",
+   "version": "1.0.0",
+   "description": "Black Myth: Wukong Boss Checklist",
+   "main": "main.js",
+   "scripts": {
+      "start": "electron .",
+      "dist": "electron-builder",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+      "electron": "^28.0.0",
+      "electron-builder": "^24.6.4"
+   },
+   "build": {
+      "appId": "com.yourname.wukongchecklist",
+      "productName": "Wukong Checklist",
+      "files": [
+         "main.js",
+         "preload.js",
+         "index.html",
+         "images/**/*"
+      ],
+      "win": {
+         "target": "nsis",
+         "icon": "build/icon.ico"
+      },
+      "nsis": {
+         "oneClick": false,
+         "allowToChangeInstallationDirectory": true
+      }
+   },
+   "dependencies": {
+      "@capacitor/android": "^8.0.0",
+      "@capacitor/cli": "^8.0.0",
+      "@capacitor/core": "^8.0.0",
+      "dist": "^0.1.2"
+   }
+}
