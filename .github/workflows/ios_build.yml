@@ -19,19 +19,18 @@ jobs:
 
       - name: Build App for iOS
         run: |
-          xcodebuild -project ios/App/App.xcodeproj \
-                     -scheme App \
+          WORKSPACE=$(find ios -name "*.xcworkspace" | head -1)
+          xcodebuild -workspace "$WORKSPACE" \
+                     -scheme "App" \
                      -sdk iphoneos \
                      -configuration Release \
                      CODE_SIGNING_ALLOWED=NO \
                      CODE_SIGNING_REQUIRED=NO \
                      clean build
 
-     - name: Create IPA (Payload)
+      - name: Create IPA (Payload)
         run: |
-          # This line finds the app file regardless of where Xcode put it
           APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "*.app" | grep "Release-iphoneos" | head -1)
-          echo "Found app at: $APP_PATH"
           mkdir -p Payload
           cp -r "$APP_PATH" Payload/
           zip -r WukongTracker.ipa Payload
